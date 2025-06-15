@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "orchestrator", "services/user_service",
+    "services/user_service"
+    # add more crates here later, e.g. "core", "services/user", ...
+]
+resolver = "2"

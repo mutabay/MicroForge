@@ -1,0 +1,12 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libcrc-01f0cc280cb20d64.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc128.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc16.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc32.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc64.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc8.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\table.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\util.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\crc-01f0cc280cb20d64.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc128.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc16.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc32.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc64.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc8.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\table.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\util.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc128.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc16.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc32.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc64.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\crc8.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\table.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc-3.3.0\src\util.rs:

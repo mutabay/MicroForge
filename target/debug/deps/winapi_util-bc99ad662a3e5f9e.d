@@ -1,0 +1,9 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libwinapi_util-bc99ad662a3e5f9e.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\console.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\file.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\sysinfo.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\win.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\winapi_util-bc99ad662a3e5f9e.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\console.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\file.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\sysinfo.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\win.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\console.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\file.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\sysinfo.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\winapi-util-0.1.9\src\win.rs:

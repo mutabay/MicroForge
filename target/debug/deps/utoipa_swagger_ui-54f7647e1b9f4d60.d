@@ -1,0 +1,9 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libutoipa_swagger_ui-54f7647e1b9f4d60.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\actix.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\axum.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\oauth.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\rocket.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\utoipa_swagger_ui-54f7647e1b9f4d60.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\actix.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\axum.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\oauth.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\rocket.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\actix.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\axum.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\oauth.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\utoipa-swagger-ui-3.1.5\src\rocket.rs:

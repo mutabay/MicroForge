@@ -1,0 +1,11 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libsocket2-78db3757feb57cb1.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockaddr.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\socket.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockref.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sys\windows.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libsocket2-78db3757feb57cb1.rlib: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockaddr.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\socket.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockref.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sys\windows.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\socket2-78db3757feb57cb1.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockaddr.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\socket.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockref.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sys\windows.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockaddr.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\socket.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sockref.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.5.10\src\sys\windows.rs:

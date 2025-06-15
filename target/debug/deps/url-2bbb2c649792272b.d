@@ -1,0 +1,11 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\liburl-2bbb2c649792272b.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\host.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\origin.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\parser.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\path_segments.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\slicing.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\quirks.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\url-2bbb2c649792272b.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\host.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\origin.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\parser.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\path_segments.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\slicing.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\quirks.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\host.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\origin.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\parser.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\path_segments.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\slicing.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\url-2.5.4\src\quirks.rs:

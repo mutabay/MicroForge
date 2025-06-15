@@ -1,0 +1,10 @@
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\libsqlformat-a0449a3bf35f5a66.rmeta: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\formatter.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\indentation.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\inline_block.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\params.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\tokenizer.rs
+
+c:\Users\Mutabay\OneDrive\Desktop\Repository\MicroForge\MicroForge\target\debug\deps\sqlformat-a0449a3bf35f5a66.d: C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\lib.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\formatter.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\indentation.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\inline_block.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\params.rs C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\tokenizer.rs
+
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\lib.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\formatter.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\indentation.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\inline_block.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\params.rs:
+C:\Users\Mutabay\.cargo\registry\src\index.crates.io-6f17d22bba15001f\sqlformat-0.2.6\src\tokenizer.rs:
