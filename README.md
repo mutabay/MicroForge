@@ -1,6 +1,6 @@
 # MicroForge ⚙️
 
-**LLM-Powered Automation for Modern Microservice Architectures**
+***LLM-Powered Automation for Modern Microservice Architectures***
 
 ---
 
