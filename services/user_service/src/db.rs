@@ -2,19 +2,25 @@ use once_cell::sync::Lazy;
 use sqlx::{sqlite::SqlitePoolOptions, SqlitePool};
 use std::{fs, path::Path};
 
-const DB_URL: &str = "sqlite://data/users.db";
-
-/// Lazily initialized global DB pool
+/// Lazily initialized global DB pool.
+/// Set `DATABASE_URL` to override the default path.
 pub static DB_POOL: Lazy<SqlitePool> = Lazy::new(|| {
-    // Ensure the `data` directory exists relative to the executable
-    let db_dir = Path::new("data");
-    if !db_dir.exists() {
-        fs::create_dir_all(db_dir).expect("❌ Failed to create 'data/' directory");
+    let db_url = std::env::var("DATABASE_URL")
+        .unwrap_or_else(|_| "sqlite://data/users.db?mode=rwc".into());
+
+    // Extract the file path and ensure its parent directory exists
+    if let Some(path) = db_url.strip_prefix("sqlite://") {
+        let path = path.split('?').next().unwrap_or(path);
+        if let Some(parent) = Path::new(path).parent() {
+            if !parent.exists() {
+                fs::create_dir_all(parent).expect("❌ Failed to create database directory");
+            }
+        }
     }
 
     SqlitePoolOptions::new()
         .max_connections(5)
-        .connect_lazy(DB_URL)
+        .connect_lazy(&db_url)
         .expect("❌ Failed to connect to SQLite")
 });
 

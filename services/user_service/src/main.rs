@@ -4,7 +4,7 @@ mod models;
 use axum::{
     extract::Path,
     response::IntoResponse,
-    routing::{delete, get, post, put},
+    routing::get,
     Json, Router,
 };
 use db::DB_POOL;
@@ -31,7 +31,7 @@ async fn main() {
         .route("/users/:id", get(get_user).put(update_user).delete(delete_user))
         .merge(SwaggerUi::new("/docs").url("/api-doc/openapi.json", ApiDoc::openapi()));
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 8001));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8001));
     tracing::info!("🚀 user_service listening at http://{}", addr);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())

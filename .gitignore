@@ -1,4 +1,13 @@
 # Build folder and log file
 build/
 build.log
-target/\n*.lock\n.venv/
+target/
+*.lock
+.venv/
+
+# Database files
+*.db
+data/
+
+# Environment
+.env

@@ -1,132 +1,202 @@
-# MicroForge ⚙️
+# MicroForge
 
-***LLM-Powered Automation for Modern Microservice Architectures***
+MicroForge is a microservice orchestration platform built in Rust. It automates two core problems in distributed architectures:
 
----
+**Service creation** — Describe a microservice in plain English. MicroForge calls an LLM to produce a full OpenAPI 3.0 specification with endpoints, schemas, and status codes. No manual spec writing.
 
-## 🧭 Overview
-
-**MicroForge** is a developer-focused platform that automatically generates, validates, and deploys microservices from high-level descriptions using **Large Language Models (LLMs)** and **OpenAPI contracts**. It combines the runtime efficiency of **Rust** with the flexibility of **Python agents** to enable rapid, scalable development of robust service-based systems.
-
-The project is built to explore and develop skills across:
-- Rust backend development (Axum, Tokio)
-- Distributed systems and microservice design
-- Software architecture and automation
-- Web development with OpenAPI-first philosophy
-- Multi-agent systems and AI orchestration using Python
+**Service coordination** — Define multi-step workflows that span across services. MicroForge executes them as a DAG: independent steps run in parallel, dependent steps wait, failures cascade automatically. No manual scheduling.
 
 ---
 
-## 🎯 Project Goals
+## Overview
 
-- **Automate microservice development** from user intent (prompt) to production-ready service.
-- **Use OpenAPI as the source of truth**, enabling clear contracts and safe integrations.
-- **Generate and evolve services using LLM-powered agents** that handle API spec creation, code scaffolding, validation, and CI suggestions.
-- **Design a central Rust-based system** that efficiently runs and connects services using both synchronous (HTTP/gRPC) and asynchronous (event-based) communication models.
-- **Improve developer productivity** by reducing manual work in CRUD setup, routing, and boilerplate orchestration logic.
+```mermaid
+flowchart TD
+    subgraph Orchestrator
+        Router[API Router]
+        Forge[Forge — Spec Generator]
+        Pipeline[Pipeline Engine — DAG Executor]
+        LLM[LLM Client]
+    end
 
----
+    Client -->|POST /forge| Router
+    Client -->|POST /pipelines| Router
 
+    Router --> Forge
+    Router --> Pipeline
 
-## 🔧 What This Application Will Do
+    Forge -->|prompt| LLM
+    LLM -->|OpenAPI spec| Forge
 
-1. **Accept high-level user input** describing a desired microservice (e.g., “Create a service to manage products with SKU, name, and stock”).
-2. **Use an LLM agent to generate an OpenAPI contract** defining the API.
-3. **Automatically scaffold a Rust microservice** using frameworks like Axum and annotate it with `utoipa` or similar tools to match the OpenAPI spec.
-4. **Run automated tests and contract validation**, using tools like `cargo test` and Schemathesis.
-5. **Optionally containerize and register the service** for communication within a distributed system.
-6. **Support real-time (sync) and event-based (async) service interactions**, improving runtime responsiveness and system scalability.
+    Pipeline -->|concurrent tasks| S1[Service A]
+    Pipeline -->|concurrent tasks| S2[Service B]
+    Pipeline -->|concurrent tasks| S3[Service C]
 
----
+    subgraph Example
+        UserService[User Service :8001]
+        DB[(SQLite)]
+        UserService --> DB
+    end
+```
 
-## 📋 Requirements (High-Level)
-
-| Component | Technology |
-|-----------|------------|
-| Runtime Backend | **Rust**, using Axum + Tokio |
-| API Contracts | **OpenAPI 3.0** |
-| LLM Orchestration | **Python**, using OpenAI or local LLM APIs |
-| Agent Framework | Modular Python scripts or threaded orchestration |
-| Testing | `cargo test`, `schemathesis`, or contract-driven test tools |
-| CI/CD (Optional) | GitHub Actions or Docker pipelines |
-
----
-## 🛣️ Next Steps
-
-1. **Initialize a Rust workspace** with basic Axum setup.
-2. **Set up Python CLI** to handle user prompts and agent logic.
-3. **Integrate OpenAPI generation & Rust code templating** based on specs.
-4. **Define communication model** (sync/async) and inter-service handling.
-5. **Develop one full cycle**: prompt → spec → service → test → deploy.
-6. **Iterate to build service registry and LLM feedback/refinement loop**.
+The **Forge** generates service contracts from natural language. The **Pipeline Engine** orchestrates data flows across those services — fetching, transforming, aggregating, and validating data concurrently.
 
 ---
 
-## ⚙️ Core Features
+## How Pipelines Work
 
-| Feature | Description |
-|--------|-------------|
-| 🧠 Prompt-to-Service | Generate a production-ready microservice from a high-level prompt |
-| 📜 OpenAPI Spec Generation | API contract is the first artifact; everything is scaffolded from it |
-| ⚙️ Rust-based Runtime | Highly efficient services built with Axum, Tokio, and utoipa |
-| 🤖 Multi-Agent AI Orchestration | Python agents manage spec generation, code creation, testing, and deployment |
-| 🔁 Sync/Async Communication | Both HTTP and message-based (Kafka/RabbitMQ) paths supported |
-| ✅ Contract Validation | Automatic validation against OpenAPI using Schemathesis |
-| 📦 Docker + CI Support | Each microservice is packaged and CI-tested for rapid deployment |
+You submit a set of tasks with dependencies. The engine builds a DAG, checks for cycles, and executes it:
 
----
+```mermaid
+flowchart LR
+    subgraph Parallel
+        A[Fetch from Service A]
+        B[Fetch from Service B]
+        C[Fetch from Service C]
+    end
 
-## 📋 Technical Stack
+    A --> D[Transform]
+    B --> E[Enrich]
+    C --> F[Filter]
 
-| Layer | Technology |
-|-------|------------|
-| Language (runtime) | **Rust** |
-| API framework | **Axum**, **utoipa** |
-| Async runtime | **Tokio** |
-| AI agents | **Python**, OpenAI API, async orchestration |
-| OpenAPI tooling | openapi-generator, schemathesis, utoipa |
-| Containerization | Docker |
-| Messaging (Async) | Kafka or RabbitMQ |
-| CI/CD | GitHub Actions, Docker Compose |
+    D --> G[Aggregate]
+    E --> G
+    F --> G
 
----
+    G --> H[Validate]
+```
 
-## 🧠 LLM Agent Design
+- Tasks with no dependencies start immediately and run concurrently
+- Each task waits only for its declared upstream dependencies
+- If a task fails, everything downstream is skipped
+- The graph is validated for cycles before execution (topological sort)
 
-### 🧾 Spec Agent
-- Input: User prompt
-- Output: OpenAPI 3.0 spec
-- Tools: LLM + OpenAPI template knowledge
-
-### 🛠️ Code Agent
-- Input: OpenAPI spec
-- Output: Rust Axum project (annotated)
-- Tasks:
-  - Generate routes, handlers
-  - Inject `utoipa` annotations
-  - Setup basic CRUD logic
-
-### 🧪 Validation Agent
-- Input: Rust service
-- Output: Test report
-- Tasks:
-  - Run `cargo check`, `cargo test`
-  - Run `schemathesis` against OpenAPI
-  - Return errors to refine code if needed
+A pipeline with 3 service calls at ~800ms each completes in ~800ms, not ~2400ms.
 
 ---
 
-## 📌 Key Constraints & Assumptions
+## How Forge Works
 
-- The user input must be structured enough for reliable LLM spec generation.
-- All services follow OpenAPI contract-first principles.
-- Rust is the execution runtime; Python is only used for orchestration logic.
-- Stateless service design is preferred for parallel execution and scale-out.
+```mermaid
+flowchart LR
+    P[Describe your service] --> LLM[LLM Provider]
+    LLM --> S[OpenAPI 3.0 YAML]
+    S --> Impl[Implement the spec]
+```
+
+Send a prompt to `POST /forge`:
+
+```bash
+curl -X POST http://localhost:8000/forge \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "A product catalog with SKU, name, price, and stock"}'
+```
+
+The orchestrator sends this to whichever LLM you configured (local Ollama, OpenAI, Anthropic, etc.) and returns a complete spec with CRUD endpoints, schemas, and status codes. The included `user_service` is an example of a service built from such a spec.
 
 ---
 
-## 📄 References
+## Quick Start
 
-- [arXiv:2502.09766v1](https://arxiv.org/html/2502.09766v1) – Chauhan et al., LLM-Generated Microservice Implementations  
+```bash
+git clone https://github.com/mutabay/MicroForge.git
+cd MicroForge
+
+ollama pull llama3.1:8b            # or set up a cloud provider in .env
+
+cargo run --bin user_service       # terminal 1 → localhost:8001
+cargo run --bin orchestrator       # terminal 2 → localhost:8000
+```
+
+Docker alternative:
+
+```bash
+cp .env.example .env               # set your LLM provider and keys
+docker compose up --build
+```
 
 ---
+
+## Example: Run a Pipeline
+
+```bash
+curl -X POST http://localhost:8000/pipelines \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "collect_and_validate",
+    "tasks": [
+      {"id": "users",   "task_type": "http_fetch", "config": {"url": "http://localhost:8001/users"}},
+      {"id": "weather", "task_type": "http_fetch", "config": {"url": "https://httpbin.org/get"}},
+      {"id": "clean",   "task_type": "transform",  "depends_on": ["users"],   "config": {"operation": "normalize"}},
+      {"id": "enrich",  "task_type": "transform",  "depends_on": ["weather"], "config": {"operation": "enrich"}},
+      {"id": "merge",   "task_type": "aggregate",  "depends_on": ["clean", "enrich"], "config": {"strategy": "merge"}},
+      {"id": "check",   "task_type": "validate",   "depends_on": ["merge"],   "config": {"schema": "output_v1"}}
+    ]
+  }'
+```
+
+The two fetches (`users` from your service, `weather` from an external API) run in parallel. The rest of the DAG follows the dependency order.
+
+---
+
+## Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/forge` | Generate an OpenAPI spec from a prompt |
+| `POST` | `/pipelines` | Execute a pipeline |
+| `GET` | `/pipelines` | List past runs |
+| `GET` | `/pipelines/{id}` | Get a specific result |
+| `GET` | `/services` | List registered services |
+| `GET` | `/health` | Health check |
+
+---
+
+## Project Structure
+
+| File | Role |
+|------|------|
+| `orchestrator/src/main.rs` | HTTP server, routing, shared state |
+| `orchestrator/src/pipeline.rs` | DAG executor — validation, concurrent scheduling, failure handling |
+| `orchestrator/src/llm.rs` | LLM client — pluggable across providers via env config |
+| `orchestrator/src/forge.rs` | Natural language → OpenAPI spec generation |
+| `services/user_service/src/main.rs` | Reference CRUD microservice with Swagger UI |
+| `services/user_service/src/models.rs` | Domain types |
+| `services/user_service/src/db.rs` | SQLite pool with auto-migration |
+| `docker-compose.yml` | Container deployment |
+| `.env.example` | Configuration reference |
+
+---
+
+## Configuration
+
+Set `LLM_PROVIDER` to choose a backend. Provider-specific variables are in [.env.example](.env.example).
+
+| Provider | `LLM_PROVIDER` |
+|----------|-----------------|
+| Ollama (local) | `ollama` |
+| OpenAI | `openai` |
+| Anthropic | `anthropic` |
+| Groq | `groq` |
+| Together AI | `together` |
+| Any OpenAI-compatible API | `custom` |
+
+---
+
+## Tests
+
+```bash
+cargo test
+```
+
+```
+test pipeline::tests::test_cycle_detection ... ok
+test pipeline::tests::test_linear_pipeline ... ok
+test pipeline::tests::test_concurrent_fanout ... ok
+```
+
+---
+
+## References
+
+Chauhan, S. et al. (2025). [*LLM-Generated Microservice Implementations from RESTful API Definitions*](https://arxiv.org/abs/2502.09766)
