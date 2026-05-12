@@ -32,7 +32,7 @@ async fn main() {
         .merge(SwaggerUi::new("/docs").url("/api-doc/openapi.json", ApiDoc::openapi()));
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 8001));
-    tracing::info!("🚀 user_service listening at http://{}", addr);
+    tracing::info!("user_service listening at http://{}", addr);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await

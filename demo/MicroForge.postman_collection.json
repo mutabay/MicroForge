@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "MicroForge Core Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{orchestrator_url}}/health"
+      }
+    },
+    {
+      "name": "2. Service Creation - Generate OpenAPI Spec",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const response = pm.response.json();",
+              "let spec = response.openapi_spec || '';",
+              "spec = spec.replace(/^```(?:yaml|yml)?\\s*/i, '').replace(/```\\s*$/i, '').trim();",
+              "pm.collectionVariables.set('openapi_spec', spec);",
+              "pm.visualizer.set(`",
+              "<style>",
+              "  body { font-family: Inter, Arial, sans-serif; padding: 16px; color: #17202a; }",
+              "  .meta { margin-bottom: 12px; padding: 10px 12px; background: #eef6ff; border-left: 4px solid #2f80ed; }",
+              "  pre { white-space: pre-wrap; background: #111827; color: #e5e7eb; padding: 16px; border-radius: 8px; line-height: 1.45; font-size: 13px; }",
+              "</style>",
+              "<h2>Generated OpenAPI Specification</h2>",
+              "<div class=\"meta\"><strong>Provider:</strong> {{provider}}</div>",
+              "<pre>{{spec}}</pre>",
+              "`, { provider: response.provider || 'unknown', spec });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"A car rental service with cars, bookings, customers, pickup date, return date, and booking status\"\n}"
+        },
+        "url": "{{orchestrator_url}}/forge"
+      }
+    },
+    {
+      "name": "3. Service Coordination - Run Booking Workflow",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"car_booking_workflow\",\n  \"tasks\": [\n    {\n      \"id\": \"check_api_health\",\n      \"task_type\": \"http_fetch\",\n      \"config\": {\n        \"url\": \"http://localhost:8000/health\",\n        \"delay_ms\": 300\n      }\n    },\n    {\n      \"id\": \"check_car_availability\",\n      \"task_type\": \"transform\",\n      \"config\": {\n        \"operation\": \"check_available_cars\",\n        \"delay_ms\": 500\n      }\n    },\n    {\n      \"id\": \"calculate_price\",\n      \"task_type\": \"transform\",\n      \"depends_on\": [\"check_car_availability\"],\n      \"config\": {\n        \"operation\": \"calculate_rental_price\",\n        \"delay_ms\": 300\n      }\n    },\n    {\n      \"id\": \"create_booking_summary\",\n      \"task_type\": \"aggregate\",\n      \"depends_on\": [\"check_api_health\", \"calculate_price\"],\n      \"config\": {\n        \"strategy\": \"booking_summary\",\n        \"delay_ms\": 150\n      }\n    },\n    {\n      \"id\": \"confirm_booking\",\n      \"task_type\": \"validate\",\n      \"depends_on\": [\"create_booking_summary\"],\n      \"config\": {\n        \"schema\": \"car_booking_v1\",\n        \"delay_ms\": 100\n      }\n    }\n  ]\n}"
+        },
+        "url": "{{orchestrator_url}}/pipelines"
+      }
+    },
+    {
+      "name": "4. Pipeline History",
+      "request": {
+        "method": "GET",
+        "url": "{{orchestrator_url}}/pipelines"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "orchestrator_url",
+      "value": "http://localhost:8000"
+    }
+  ]
+}

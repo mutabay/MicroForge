@@ -34,7 +34,7 @@ pub async fn forge_service(
         Ok(spec) => {
             let provider = llm.provider_name();
             Json(ForgeResponse {
-                openapi_spec: spec,
+                openapi_spec: clean_openapi_spec(&spec),
                 provider,
             })
             .into_response()
@@ -48,4 +48,25 @@ pub async fn forge_service(
                 .into_response()
         }
     }
+}
+
+fn clean_openapi_spec(spec: &str) -> String {
+    let spec = spec.trim();
+
+    if !spec.starts_with("```") {
+        return spec.to_string();
+    }
+
+    let mut lines = spec.lines();
+    let first = lines.next().unwrap_or_default().trim();
+    if !matches!(first, "```" | "```yaml" | "```yml") {
+        return spec.to_string();
+    }
+
+    let mut body: Vec<&str> = lines.collect();
+    if body.last().map(|line| line.trim()) == Some("```") {
+        body.pop();
+    }
+
+    body.join("\n").trim().to_string()
 }
